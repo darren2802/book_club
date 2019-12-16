@@ -1,0 +1,16 @@
+<h2>Books</h2>
+<br>
+<table class="table">
+  <th>Title</th>
+  <th>Number of Pages</th>
+  <th>Year of Publication</th>
+  <th>Author</th>
+  <% @books.each do |book| %>
+    <tr id="book-<%= book.id %>">
+      <td><%= book.title %></td>
+      <td><%= book.pages %></td>
+      <td><%= book.publication_year %></td>
+      <td><%= link_to book.authors.first.name, "/authors/#{book.authors.first.id}" %></td>
+    </tr>
+  <% end %>
+</table>
